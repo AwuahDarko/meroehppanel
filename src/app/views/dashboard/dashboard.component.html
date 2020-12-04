@@ -1,0 +1,25 @@
+<div class="row mt-4 pl-5 pr-5">
+  <div class="col-md-3 mb-1">
+    <app-data-card [card_props]="card_one"></app-data-card>
+  </div>
+  <div class="col-md-3 mb-1">
+    <app-data-card [card_props]="card_two"></app-data-card>
+  </div>
+  <div class="col-md-3 mb-1">
+    <app-data-card [card_props]="card_three"></app-data-card>
+  </div>
+  <div class="col-md-3 mb-1">
+    <app-data-card [card_props]="card_four"></app-data-card>
+  </div>
+</div>
+
+<div class="row circular-border" style="margin-top: 10rem">
+  <div class="col-md-5"></div>
+  <div
+    class="col-md-2 text-center bg-dark p-3 ml-5 mr-5 circular-border"
+    routerLink="/tenants"
+  >
+    <a routerLink="/tenants">View Tenants</a>
+  </div>
+  <div class="col-md-5"></div>
+</div>

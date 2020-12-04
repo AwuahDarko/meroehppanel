@@ -1,0 +1,47 @@
+.shaped-border {
+  height: 130px;
+  width: 100%;
+  border-radius: 4px 25px 2px 20px;
+}
+
+.shaped-border h6 {
+  text-transform: uppercase;
+  padding: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-weight: normal;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.shaped-border p {
+  margin-bottom: 0;
+  margin-top: 10px;
+  margin-left: 17px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+hr {
+  margin: 0;
+  background-color: #ffffff;
+}
+
+.relative {
+  position: relative;
+}
+
+.abs {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #ffffff;
+}
+
+.small-text {
+  text-align: right;
+  margin-top: 5px;
+  margin-right: 10px;
+  color: #ffffff;
+}

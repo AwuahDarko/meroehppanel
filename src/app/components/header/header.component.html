@@ -1,0 +1,97 @@
+<header class="p-row">
+  <div class="left-menu-items p-row big-nav">
+    <a href="https://meroehp.com" target="_blank">
+      <img
+        class="logo"
+        src="../../../assets/images/logo-dark.png"
+        alt="meroe logo"
+    /></a>
+    <ul class="link-container p-row center-vertical">
+      <li class="link-item">
+        <a routerLink="/dashboard">
+          <i class="fa fa-pie-chart"></i> Dashboard
+        </a>
+      </li>
+      <!-- <li class="link-item">
+        <a href="#"> <i class="fa fa-signal"></i> Menu 1 </a>
+      </li> -->
+      <li class="link-item">
+        <a routerLink="/tenants">
+          <i class="fa fa-folder-open-o"></i> Tenants
+        </a>
+      </li>
+      <!-- <li class="link-item">
+        <a href="#"> <i class="fa fa-list-alt"></i> Menu 3 </a>
+      </li> -->
+    </ul>
+  </div>
+  <div class="p-row center-vertical big-nav">
+    <img
+      class="small-logo"
+      src="../../../assets/images/avatar.jpg"
+      alt="avatar"
+    />
+    <li class="dropdown">
+      <a
+        href="#"
+        class="dropdown-toggle"
+        role="button"
+        id="dropdownMenuLink"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+        >Jack Sparrow
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        <a class="dropdown-item" href="#">
+          <i class="fa fa-user"></i>
+          Account
+        </a>
+        <a class="dropdown-item" href="#">
+          <i class="fa fa-sign-out"></i> Log Out
+        </a>
+      </div>
+    </li>
+  </div>
+
+  <div class="mob-nav">
+    <div class="topnav pt-2 pb-2">
+      <img
+        class="mob-logo"
+        src="../../../assets/images/logo-dark.png"
+        alt="meroe logo"
+      />
+      <div id="myLinks">
+        <li class="link-item">
+          <a routerLink="/dashboard">
+            <i class="fa fa-pie-chart"></i> Dashboard
+          </a>
+        </li>
+        <!-- <li class="link-item">
+          <a href="#"> <i class="fa fa-signal"></i> Menu 1 </a>
+        </li> -->
+        <li class="link-item">
+          <a routerLink="/tenants">
+            <i class="fa fa-folder-open-o"></i> Tenants
+          </a>
+        </li>
+        <!-- <li class="link-item">
+          <a href="#"> <i class="fa fa-list-alt"></i> Menu 3 </a>
+        </li> -->
+      </div>
+      <a
+        href="javascript:void(0);"
+        class="icon"
+        (click)="showOrHideMobileNavMenu()"
+      >
+        <i class="fa fa-bars fa-2x text-dark"></i>
+      </a>
+    </div>
+  </div>
+</header>
+<ngx-loading-bar
+  [height]="'2px'"
+  color="#FF0000"
+  [diameter]="'20px'"
+  [fixed]="false"
+></ngx-loading-bar>

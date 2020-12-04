@@ -1,0 +1,18 @@
+<aside class="card" style="width: 300px">
+  <div class="sidebar-title-container">
+    <h6>{{ headerTitle }}</h6>
+    <!-- <i class="fa fa-bars"></i> -->
+  </div>
+  <hr />
+  <ul class="sidebar-items-container" *ngFor="let menu of menuList">
+    <li class="sidebar-item">
+      <div class="avatar" [style]="'background-color: ' + menu.avatar_color">
+        <i class="fa" [ngClass]="menu.icon"></i>
+      </div>
+      <div class="sidebar-text">
+        <a [href]="menu.url" class="sidebar-anchor"> {{ menu.title }} </a>
+        <small> {{ menu.subtitle }} </small>
+      </div>
+    </li>
+  </ul>
+</aside>

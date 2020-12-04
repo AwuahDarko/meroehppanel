@@ -1,0 +1,13 @@
+div a {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+
+div a:hover {
+  text-decoration: none;
+}
+
+.circular-border {
+  border-radius: 5px;
+}
