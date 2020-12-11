@@ -54,7 +54,7 @@ export class DashboardComponent implements OnInit {
 
   reloadSummary(): void {
     this.card_one.number = this.tenant_summary.number_of_tenants;
-    this.card_two.number = this.tenant_summary.tenants_subscription_cancelled;
+    this.card_two.number = this.tenant_summary.tenants_on_subscription;
     this.card_three.number = this.tenant_summary.tenants_on_free_trial;
     this.card_four.number = this.tenant_summary.tenants_subscription_cancelled;
   }
