@@ -1,0 +1,29 @@
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.content-context {
+  width: 60%;
+}
+
+hr {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.context {
+  padding: 20px;
+  border-bottom: 1px solid #c9c5c5;
+  display: flex;
+  justify-content: space-between;
+}
+
+.context div {
+  width: 50%;
+}

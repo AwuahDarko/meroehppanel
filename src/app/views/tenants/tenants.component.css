@@ -1,0 +1,55 @@
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+.vh-80 {
+  height: 80vh;
+}
+
+.tenant-list {
+  display: flex;
+  gap: 30px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.tenant-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.tenant-container {
+  cursor: pointer;
+}
+
+.tenant-list:hover {
+  background-color: rgb(224, 240, 253);
+}
+
+.fixed-scroll-height {
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+.tenant-summary p {
+  font-weight: bold;
+  font-size: 20px;
+}

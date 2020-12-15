@@ -11,6 +11,7 @@ export class DataCardComponent implements OnInit {
     title: 'Lorem ipsum',
     number: '1030',
     icon: 'fa-book',
+    footer: 'Put card description here',
   };
   constructor() {}
 

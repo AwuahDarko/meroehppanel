@@ -4,6 +4,7 @@ export class SidebarItem {
   title: string;
   subtitle: string;
   url: string;
+  disable_route: boolean;
 
   constructor(menu: any) {
     this.icon = menu.icon;
@@ -11,5 +12,6 @@ export class SidebarItem {
     this.title = menu.title;
     this.subtitle = menu.subtitle;
     this.url = menu.url;
+    this.disable_route = menu.disable_route;
   }
 }

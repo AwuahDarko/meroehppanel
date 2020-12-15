@@ -15,24 +15,28 @@ export class DashboardComponent implements OnInit {
     title: 'Tenants',
     number: this.tenant_summary.number_of_tenants,
     icon: 'fa-leaf',
+    footer: 'Total number of tenants',
   };
   card_two = {
     background_color: '#348fe2',
     title: 'Total Subscriptions',
     number: this.tenant_summary.tenants_subscription_cancelled,
     icon: 'fa-bookmark-o',
+    footer: 'Total number of subscribed tenants',
   };
   card_three = {
     background_color: '#727cb6',
     title: 'On Trial',
     number: this.tenant_summary.tenants_on_free_trial,
     icon: 'fa-tasks',
+    footer: 'Total number of free trials',
   };
   card_four = {
     background_color: '#2d353c',
     title: 'Canceled Subscription',
     number: this.tenant_summary.tenants_subscription_cancelled,
     icon: 'fa-shield',
+    footer: 'Number of canceled subscriptions',
   };
 
   constructor(private auth: AuthenticationService, private http: HttpClient) {}
@@ -42,7 +46,6 @@ export class DashboardComponent implements OnInit {
       .get(`${this.auth.url}/tenant_summary`, { headers: this.auth.getHeader })
       .subscribe(
         (res) => {
-          console.log(res['data']);
           this.tenant_summary.setTenantSummary(res['data']);
           this.reloadSummary();
         },

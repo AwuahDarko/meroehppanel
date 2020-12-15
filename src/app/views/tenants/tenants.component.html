@@ -1,1 +1,44 @@
-<p>tenants works!</p>
+<ngx-snackbar
+  [position]="'top-right'"
+  [max]="3"
+  [timeout]="5000"
+  [background]="snackbar_color"
+  [accent]="'white'"
+></ngx-snackbar>
+<div class="row mt-5">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <div class="card vh-80 pt-4">
+      <div class="col vh-80">
+        <h5 class="mb-4">MeroeHP Tenants</h5>
+        <input
+          type="text"
+          class="form-control mb-4"
+          placeholder="Search by business name or fqdn"
+          (input)="searchTenants($event)"
+        />
+        <ul class="tenant-container fixed-scroll-height">
+          <li class="tenant-list" *ngFor="let tenant of filtered_tenant_list">
+            <img
+              *ngIf="tenant.tenant_logo == null"
+              [src]="logo_url"
+              alt="business name"
+              class="avatar"
+            />
+            <img
+              *ngIf="tenant.tenant_logo != null"
+              [src]="tenant.tenant_logo"
+              alt="business name"
+              class="avatar"
+            />
+            <div class="tenant-summary">
+              <p>{{ tenant.tenant_name }}</p>
+              <small>{{ tenant.admin_name }}</small>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>

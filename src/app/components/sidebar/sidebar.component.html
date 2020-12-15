@@ -10,7 +10,12 @@
         <i class="fa" [ngClass]="menu.icon"></i>
       </div>
       <div class="sidebar-text">
-        <a [href]="menu.url" class="sidebar-anchor"> {{ menu.title }} </a>
+        <a *ngIf="menu.disable_route" class="sidebar-anchor">
+          {{ menu.title }}
+        </a>
+        <a *ngIf="!menu.disable_route" [href]="menu.url" class="sidebar-anchor">
+          {{ menu.title }}
+        </a>
         <small> {{ menu.subtitle }} </small>
       </div>
     </li>

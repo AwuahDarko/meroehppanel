@@ -29,6 +29,13 @@ const routes: Routes = [
             (module) => module.TenantsModule
           ),
       },
+      {
+        path: 'tenants-detail',
+        loadChildren: () =>
+          import('./tenants-details/tenants-details.module').then(
+            (module) => module.TenantsDetailsModule
+          ),
+      },
     ],
   },
   // {

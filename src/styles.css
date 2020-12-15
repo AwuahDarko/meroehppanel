@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  overflow-x: hidden;
+}
+
+.snack-text,
+.snack-action {
+  display: flex;
+  justify-content: flex-end;
+  padding: 5;
+  cursor: pointer;
+}
+
+.snack {
+  padding: 5px 30px;
+}
