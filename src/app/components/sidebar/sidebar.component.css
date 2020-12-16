@@ -74,3 +74,13 @@ a:hover {
 hr {
   margin: 5px;
 }
+
+.sidebar-width {
+  width: 300px;
+}
+
+@media (max-width: 400px) {
+  .sidebar-width {
+    width: 250px;
+  }
+}

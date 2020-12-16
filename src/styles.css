@@ -6,7 +6,7 @@ body {
 .snack-text,
 .snack-action {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 5;
   cursor: pointer;
 }

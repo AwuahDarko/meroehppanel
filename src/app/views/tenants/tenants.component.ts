@@ -4,15 +4,18 @@ import { HttpClient, HttpHeaders, HttpHandler } from '@angular/common/http';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { SnackbarService } from 'ngx-snackbar';
 import { TenantInformation } from '../../models/tenant-details';
+import { DataService } from '../../services/data.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-tenants',
   templateUrl: './tenants.component.html',
   styleUrls: ['./tenants.component.css'],
 })
 export class TenantsComponent implements OnInit, AfterViewInit {
-  logo_url: SafeUrl = 'https://ui-avatars.com/api/?size=300&name=Hp';
+  logo_url: string =
+    'https://ui-avatars.com/api/?size=300&background=random&name=';
 
-  test = [1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2];
   snackbar_color = '#20B2AA';
   tenant_list: TenantInformation[] = [];
   filtered_tenant_list: TenantInformation[] = [];
@@ -20,7 +23,9 @@ export class TenantsComponent implements OnInit, AfterViewInit {
   constructor(
     private auth: AuthenticationService,
     private http: HttpClient,
-    private snackbarService: SnackbarService
+    private snackbarService: SnackbarService,
+    private dataService: DataService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -40,12 +45,13 @@ export class TenantsComponent implements OnInit, AfterViewInit {
             this.tenant_list.push(new TenantInformation(one_data));
           });
           this.filtered_tenant_list = this.tenant_list;
+          this.dataService.tenant_list = this.tenant_list;
         },
         (err) => {
           console.log(err);
           this.showNotification(
             'Could not get tenants, please check your internet connection',
-            '#DC143C',
+            '#FF4500',
             5000
           );
         }
@@ -59,7 +65,7 @@ export class TenantsComponent implements OnInit, AfterViewInit {
       msg: `<strong style="color: white" >${message}</strong>`,
       timeout: time,
       action: {
-        text: 'Close',
+        text: '',
         onClick: (snack) => {
           console.log('dismissed: ' + snack.id);
         },
@@ -81,6 +87,12 @@ export class TenantsComponent implements OnInit, AfterViewInit {
       if (one_tenant.tenant_name.includes(query)) {
         this.filtered_tenant_list.push(one_tenant);
       }
+    });
+  }
+
+  navigateToTenantsDetails(fqdn: string): void {
+    this.router.navigate([`tenants-detail`], {
+      queryParams: { fqdn },
     });
   }
 }

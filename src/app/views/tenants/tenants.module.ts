@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { TenantsRoutingModule } from './tenants-routing.module';
 import { TenantsComponent } from './tenants.component';
 import { SnackbarModule } from 'ngx-snackbar';
+// "node_modules/ngx-snackbar/bundles/style.css"
 
 @NgModule({
   declarations: [TenantsComponent],

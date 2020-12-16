@@ -27,3 +27,70 @@ ul {
 .context div {
   width: 50%;
 }
+
+.context:hover {
+  background-color: #dff2fc;
+}
+
+.data-card {
+  width: 200px;
+  height: auto;
+  padding: 5px 10px;
+}
+
+.a-wrap-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: center;
+}
+
+.data-card p {
+  margin-bottom: 0;
+}
+
+.teal-border {
+  border-color: #008080;
+}
+
+.green-border {
+  border-color: #006400;
+}
+
+.pink-border {
+  border-color: #ff00ff;
+}
+.blue-border {
+  border-color: #0000ff;
+}
+
+.borderr {
+  border-width: 1.5px;
+}
+
+.red-border {
+  border-color: #ff0000;
+}
+
+.first-one {
+  font-weight: bold;
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.put-center {
+  align-items: flex-end;
+}
+
+@media (max-width: 600px) {
+  .content-context {
+    width: 100%;
+  }
+}

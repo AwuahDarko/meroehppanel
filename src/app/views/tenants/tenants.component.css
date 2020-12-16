@@ -20,6 +20,13 @@ li {
   gap: 30px;
   padding: 10px;
   border-radius: 5px;
+  position: relative;
+}
+
+.tenant-list i {
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
 .avatar {
@@ -27,6 +34,11 @@ li {
   width: 70px;
   height: 70px;
   border-radius: 50%;
+
+  box-shadow: 1px 1px 4px 1px #ada9a9;
+  /* border-style: groove;
+  border-color: #000080 !important;
+  border-width: 10px !important; */
 }
 
 .tenant-summary {
@@ -42,6 +54,14 @@ li {
 
 .tenant-list:hover {
   background-color: rgb(224, 240, 253);
+}
+
+.active-icon {
+  color: #008000;
+}
+
+.inactive-icon {
+  color: rgb(232, 223, 223);
 }
 
 .fixed-scroll-height {

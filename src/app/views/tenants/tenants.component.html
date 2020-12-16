@@ -1,5 +1,5 @@
 <ngx-snackbar
-  [position]="'top-right'"
+  [position]="'bottom-center'"
   [max]="3"
   [timeout]="5000"
   [background]="snackbar_color"
@@ -18,10 +18,14 @@
           (input)="searchTenants($event)"
         />
         <ul class="tenant-container fixed-scroll-height">
-          <li class="tenant-list" *ngFor="let tenant of filtered_tenant_list">
+          <li
+            class="tenant-list"
+            *ngFor="let tenant of filtered_tenant_list"
+            (click)="this.navigateToTenantsDetails(tenant.tenant_name)"
+          >
             <img
               *ngIf="tenant.tenant_logo == null"
-              [src]="logo_url"
+              [src]="logo_url + tenant.tenant_name"
               alt="business name"
               class="avatar"
             />
@@ -35,6 +39,14 @@
               <p>{{ tenant.tenant_name }}</p>
               <small>{{ tenant.admin_name }}</small>
             </div>
+            <i
+              *ngIf="tenant.tenant_active"
+              class="fa fa-check-circle active-icon"
+            ></i>
+            <i
+              *ngIf="!tenant.tenant_active"
+              class="fa fa-check-circle inactive-icon"
+            ></i>
           </li>
         </ul>
       </div>

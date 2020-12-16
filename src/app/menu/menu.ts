@@ -43,15 +43,15 @@ export const tenants_details_menu = [
     disable_route: true,
   },
   {
-    icon: 'fa-th-large',
+    icon: 'fa-trello',
     avatar_color: '#FF8C00',
-    title: 'Subscription information',
+    title: 'Subscription Information',
     subtitle: "Details about tenant's subscription",
     url: 'https://www.meroehp.com',
     disable_route: true,
   },
   {
-    icon: 'fa-th-large',
+    icon: 'fa-renren',
     avatar_color: '#D2691E',
     title: 'Actions',
     subtitle: 'Perform actions on this tenant',

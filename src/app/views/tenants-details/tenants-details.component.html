@@ -1,25 +1,104 @@
+<ngx-snackbar
+  [position]="'top-right'"
+  [max]="3"
+  [timeout]="5000"
+  [background]="snackbar_color"
+  [accent]="'white'"
+></ngx-snackbar>
 <div class="row mt-5">
   <div class="col-md-2"></div>
   <div class="col-md-8">
     <div class="content">
-      <app-sidebar [menuList]="menu"> </app-sidebar>
+      <app-sidebar
+        [menuList]="menu"
+        [headerTitle]="'Menu'"
+        (onSelectedChanged)="onMenuClicked($event)"
+      >
+      </app-sidebar>
       <div class="card content-context">
-        <h6 class="p-3">Tenant Information</h6>
+        <h5 class="p-3 text-bold">{{ card_title }}</h5>
         <hr />
-        <ul class="context-contain">
+        <ul *ngIf="card_title === 'Tenant Information'" class="context-contain">
           <li class="context">
-            <div>Tell me</div>
-            <div>something</div>
+            <div class="text-bold">Tenant name</div>
+            <div>{{ tenant?.tenant_name }}</div>
           </li>
           <li class="context">
-            <div>Tell me</div>
-            <div>something</div>
+            <div class="text-bold">Tenant email</div>
+            <div>{{ tenant?.tenant_email }}</div>
           </li>
           <li class="context">
-            <div>Tell me</div>
-            <div>something</div>
+            <div class="text-bold">Administrator name</div>
+            <div>{{ tenant?.admin_name }}</div>
+          </li>
+          <li class="context">
+            <div class="text-bold">Joined on</div>
+            <div>{{ tenant?.date_of_creation }}</div>
+          </li>
+          <li class="context">
+            <div class="text-bold">Number of users</div>
+            <div>{{ tenant?.number_of_users }}</div>
+          </li>
+          <li class="context">
+            <div class="text-bold">SMS balance</div>
+            <div>{{ tenant?.sms_balance }}</div>
           </li>
         </ul>
+        <div
+          *ngIf="card_title === 'Subscription Information'"
+          class="a-wrap-row"
+        >
+          <div class="card data-card blue-border borderr">
+            <p class="first-one">Subscription Plan</p>
+            <hr />
+            <p class="text-center">{{ tenant?.subscription_data.plan_name }}</p>
+          </div>
+          <div class="card data-card green-border borderr">
+            <p class="first-one">Status</p>
+            <hr />
+            <p class="text-center">{{ tenant?.subscription_data.status }}</p>
+          </div>
+          <div class="card data-card pink-border borderr">
+            <p class="first-one">Subscription ends on</p>
+            <hr />
+            <p class="text-center">
+              {{ tenant?.subscription_data.subscription_ends_at }}
+            </p>
+          </div>
+          <div class="card data-card red-border borderr">
+            <p class="first-one">Trial ends</p>
+            <hr />
+            <p class="text-center">
+              {{ tenant?.subscription_data.trial_ends_at }}
+            </p>
+          </div>
+        </div>
+        <div *ngIf="card_title === 'Actions'" class="a-wrap-row put-center">
+          <button
+            *ngIf="tenant.tenant_active"
+            class="btn btn-danger mt-5"
+            mwlConfirmationPopover
+            [popoverTitle]="popoverTitle"
+            [popoverMessage]="popoverMessage"
+            placement="bottom"
+            (confirm)="deactivateTenant()"
+            (cancel)="cancelClicked = true"
+          >
+            Deactivate
+          </button>
+          <button
+            *ngIf="!tenant.tenant_active"
+            class="btn btn-success mt-5"
+            mwlConfirmationPopover
+            [popoverTitle]="popoverTitle2"
+            [popoverMessage]="popoverMessage2"
+            placement="bottom"
+            (confirm)="activateTenant()"
+            (cancel)="cancelClicked2 = true"
+          >
+            Activate
+          </button>
+        </div>
       </div>
     </div>
   </div>

@@ -1,10 +1,14 @@
-<aside class="card" style="width: 300px">
+<aside class="card sidebar-width">
   <div class="sidebar-title-container">
     <h6>{{ headerTitle }}</h6>
     <!-- <i class="fa fa-bars"></i> -->
   </div>
   <hr />
-  <ul class="sidebar-items-container" *ngFor="let menu of menuList">
+  <ul
+    class="sidebar-items-container"
+    *ngFor="let menu of menuList"
+    (click)="onItemClicked(menu.title)"
+  >
     <li class="sidebar-item">
       <div class="avatar" [style]="'background-color: ' + menu.avatar_color">
         <i class="fa" [ngClass]="menu.icon"></i>
