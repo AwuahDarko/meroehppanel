@@ -5,7 +5,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { SidebarModule } from '../../components/sidebar/sidebar.module';
 import { DataCardModule } from '../../components/data-card/data-card.module';
-
+import { HeaderModule } from '../../components/header/header.module';
 @NgModule({
   declarations: [DashboardComponent],
   imports: [
@@ -13,6 +13,7 @@ import { DataCardModule } from '../../components/data-card/data-card.module';
     DashboardRoutingModule,
     SidebarModule,
     DataCardModule,
+    HeaderModule,
   ],
 })
 export class DashboardModule {}

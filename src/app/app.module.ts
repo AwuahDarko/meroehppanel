@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoadingBarHttpClientModule } from '@ngx-loading-bar/http-client';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
-import { HeaderModule } from './components/header/header.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,7 +13,6 @@ import { HeaderModule } from './components/header/header.module';
     AppRoutingModule,
     LoadingBarHttpClientModule,
     LoadingBarRouterModule,
-    HeaderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

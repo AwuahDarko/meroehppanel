@@ -5,15 +5,14 @@ import { HttpClient, HttpHeaders, HttpHandler } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AuthenticationService {
-  url = 'https://meroehp.xyz/api';
-  private token: string = 'pk_test_f294bfd261beaef058226449e030c0bd4e097aa8';
+  url = 'https://panel.meroehp.xyz/api';
 
   getHeader = new HttpHeaders({
-    Authorization: 'Bearer ' + this.token,
+    Authorization: 'Bearer ' + localStorage.getItem('token'),
   });
 
   header = new HttpHeaders({
-    Authorization: 'Bearer ' + this.token,
+    Authorization: 'Bearer ' + localStorage.getItem('token'),
     'Content-Type': 'application/json',
   });
 

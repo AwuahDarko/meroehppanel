@@ -131,6 +131,7 @@ export class TenantsDetailsComponent implements OnInit {
           }, 5000);
         },
         (err) => {
+          console.log(err);
           this.showNotification(
             'Could not deactivate this tenant',
             '#FF4500',

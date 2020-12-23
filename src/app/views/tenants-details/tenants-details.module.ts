@@ -6,6 +6,7 @@ import { TenantsDetailsComponent } from './tenants-details.component';
 import { SidebarModule } from '../../components/sidebar/sidebar.module';
 import { SnackbarModule } from 'ngx-snackbar';
 // "node_modules/ngx-snackbar/bundles/style.css"
+import { HeaderModule } from '../../components/header/header.module';
 
 import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 @NgModule({
@@ -18,6 +19,7 @@ import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
     ConfirmationPopoverModule.forRoot({
       confirmButtonType: 'info', // set defaults here
     }),
+    HeaderModule,
   ],
 })
 export class TenantsDetailsModule {}

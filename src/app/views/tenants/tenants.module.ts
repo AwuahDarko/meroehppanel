@@ -5,7 +5,7 @@ import { TenantsRoutingModule } from './tenants-routing.module';
 import { TenantsComponent } from './tenants.component';
 import { SnackbarModule } from 'ngx-snackbar';
 // "node_modules/ngx-snackbar/bundles/style.css"
-
+import { HeaderModule } from '../../components/header/header.module';
 @NgModule({
   declarations: [TenantsComponent],
   imports: [
@@ -13,6 +13,7 @@ import { SnackbarModule } from 'ngx-snackbar';
     TenantsRoutingModule,
     SnackbarModule.forRoot(),
     FormsModule,
+    HeaderModule,
   ],
 })
 export class TenantsModule {}

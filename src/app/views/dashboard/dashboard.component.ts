@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpHandler } from '@angular/common/http';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { TenantSummary } from '../../models/tenants-summary';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -39,9 +41,14 @@ export class DashboardComponent implements OnInit {
     footer: 'Number of canceled subscriptions',
   };
 
-  constructor(private auth: AuthenticationService, private http: HttpClient) {}
+  constructor(
+    private auth: AuthenticationService,
+    private http: HttpClient,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
+    console.log(this.auth.header);
     this.http
       .get(`${this.auth.url}/tenant_summary`, { headers: this.auth.getHeader })
       .subscribe(

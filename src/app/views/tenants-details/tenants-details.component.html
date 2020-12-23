@@ -1,3 +1,4 @@
+<app-header></app-header>
 <ngx-snackbar
   [position]="'top-right'"
   [max]="3"
@@ -48,24 +49,24 @@
           *ngIf="card_title === 'Subscription Information'"
           class="a-wrap-row"
         >
-          <div class="card data-card blue-border borderr">
+          <div class="card data-card blue-borders borderr">
             <p class="first-one">Subscription Plan</p>
             <hr />
             <p class="text-center">{{ tenant?.subscription_data.plan_name }}</p>
           </div>
-          <div class="card data-card green-border borderr">
+          <div class="card data-card green-borders borderr">
             <p class="first-one">Status</p>
             <hr />
             <p class="text-center">{{ tenant?.subscription_data.status }}</p>
           </div>
-          <div class="card data-card pink-border borderr">
+          <div class="card data-card pink-borders borderr">
             <p class="first-one">Subscription ends on</p>
             <hr />
             <p class="text-center">
               {{ tenant?.subscription_data.subscription_ends_at }}
             </p>
           </div>
-          <div class="card data-card red-border borderr">
+          <div class="card data-card red-borders borderr">
             <p class="first-one">Trial ends</p>
             <hr />
             <p class="text-center">
