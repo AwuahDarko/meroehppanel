@@ -121,7 +121,7 @@ export class TenantsDetailsComponent implements OnInit {
 
     this.http
       .post(`${this.auth.url}/deactivate_tenant`, data, {
-        headers: this.auth.header,
+        headers: this.auth.header(),
       })
       .subscribe(
         (res) => {
@@ -148,7 +148,7 @@ export class TenantsDetailsComponent implements OnInit {
 
     this.http
       .post(`${this.auth.url}/activate_tenant`, data, {
-        headers: this.auth.header,
+        headers: this.auth.header(),
       })
       .subscribe(
         (res) => {

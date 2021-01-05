@@ -36,7 +36,9 @@ export class TenantsComponent implements OnInit, AfterViewInit {
 
   fetchAllTenants(): void {
     this.http
-      .get(`${this.auth.url}/tenant_details`, { headers: this.auth.getHeader })
+      .get(`${this.auth.url}/tenant_details`, {
+        headers: this.auth.getHeader(),
+      })
       .subscribe(
         (res) => {
           const data: any[] = res['data'];

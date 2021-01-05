@@ -27,7 +27,9 @@ export class HeaderComponent implements OnInit {
 
   logout(): void {
     this.http
-      .post(`${this.auth.url}/panel_logout`, '', { headers: this.auth.header })
+      .post(`${this.auth.url}/panel_logout`, '', {
+        headers: this.auth.header(),
+      })
       .subscribe(
         (res) => {
           console.log(res);

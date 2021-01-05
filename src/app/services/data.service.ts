@@ -15,7 +15,7 @@ export class DataService {
     return new Promise((resolve, reject) => {
       this.http
         .get(`${this.auth.url}/tenant_details`, {
-          headers: this.auth.getHeader,
+          headers: this.auth.getHeader(),
         })
         .subscribe(
           (res) => {

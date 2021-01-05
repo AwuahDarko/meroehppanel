@@ -8,6 +8,7 @@
         src="../../../assets/images/logo-dark.png"
         alt="logo"
       />
+      <h6 class="hidee err-msg" id="err">{{ errorText }}</h6>
       <input
         type="email"
         name="email"
@@ -26,7 +27,7 @@
       />
       <input *ngIf="!loading" type="submit" value="Login" />
       <button *ngIf="loading" class="btn">
-        <i class="fa fa fa-spinner"></i>authenticating...
+        <img src="../../assets/images/loader.gif" alt="" /> authenticating...
       </button>
     </form>
   </div>

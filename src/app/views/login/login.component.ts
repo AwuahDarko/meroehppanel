@@ -11,6 +11,7 @@ import { SnackbarService } from 'ngx-snackbar';
 })
 export class LoginComponent implements OnInit {
   loading: boolean = false;
+  errorText = '';
 
   constructor(
     private router: Router,
@@ -35,18 +36,28 @@ export class LoginComponent implements OnInit {
     const formData = new FormData();
     formData.append('username', email);
     formData.append('password', password);
-    this.http.post(`https://meroehp.xyz/api/panel_login`, formData).subscribe(
-      (res) => {
-        this.loading = false;
-        localStorage.setItem('token', res['access_token']);
-        setTimeout(() => {
+
+    this.http
+      .post(`https://meroehp.online/api/panel_login`, formData)
+      .subscribe(
+        (res) => {
+          this.loading = false;
+          localStorage.setItem('token', res['access_token']);
+
           this.router.navigate([`dashboard`]);
-        }, 1000);
-      },
-      (err) => {
-        this.loading = false;
-        console.log(err);
-      }
-    );
+        },
+        (err) => {
+          this.loading = false;
+          const errorlabel = document.getElementById('err');
+          this.errorText = err['error'];
+          errorlabel.classList.add('show');
+          errorlabel.classList.remove('hide');
+          setTimeout(() => {
+            errorlabel.classList.add('hide');
+            errorlabel.classList.remove('show');
+          }, 3000);
+          console.log(err);
+        }
+      );
   }
 }

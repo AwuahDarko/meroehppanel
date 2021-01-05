@@ -48,9 +48,10 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.auth.header);
     this.http
-      .get(`${this.auth.url}/tenant_summary`, { headers: this.auth.getHeader })
+      .get(`${this.auth.url}/tenant_summary`, {
+        headers: this.auth.getHeader(),
+      })
       .subscribe(
         (res) => {
           this.tenant_summary.setTenantSummary(res['data']);

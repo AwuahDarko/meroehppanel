@@ -25,3 +25,16 @@ input[type="submit"] {
   margin-top: 10px;
   border-radius: 5px;
 }
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.err-msg {
+  color: rgb(250, 54, 54);
+  font-size: 14px;
+}
